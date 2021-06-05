@@ -25,7 +25,7 @@
                     <div class="error-msg">*{{ error.$message }}</div>
                 </div>
                 <Select v-model="country">
-                    <option selected="true">Choose country</option>
+                    <option value="" disabled selected>Choose Country</option>
                     <option v-for="country in allCountries" :key="country.id">{{country.name}}</option>
                 </Select>
             </div>
@@ -90,12 +90,12 @@ export default {
                     email: this.email,
                     country: this.country,
                     password: this.password
-            })
+            }) 
 
             this.name = this.surname = this.email = this.country = this.password = "";
-            } else {
-                return null
-                }
+                
+            } 
+            
             }
         },
     }
