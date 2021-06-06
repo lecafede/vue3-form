@@ -50,6 +50,7 @@ export const Button = styled.button`
     border-radius: 10px;
     box-shadow: 0 9px #0f4071;
     font-weight: 600;
+    margin-top: 20px;  
 
     &:hover {
         background-color:#037fff;
@@ -60,4 +61,20 @@ export const Button = styled.button`
         box-shadow: 0 5px #0f4071;
         transform: translateY(4px);
     }
+`
+export const ErrorMessage = styled.div`
+    color: rgb(199, 15, 15);
+    text-align: left;
+    padding-bottom: 5px;
+`
+
+export const Form = styled.form`
+    background-color: #141e30;
+    padding: 20px 50px 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+`
+
+export const FormTitle = styled.h3`
+    font-size: 30px;
 `

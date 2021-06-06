@@ -1,26 +1,33 @@
 <template>
     <div>
-        <h2>Form Count: {{formsCount}}</h2>
+        <form-count>Form Count: {{formsCount}}</form-count>
         <hr>
-        <div class="form" v-for="forms in allForms" :key="forms.id">
-            <h3>ID формы: # {{forms.id}}</h3>
-            <p><span>Name:</span> {{forms.name}}</p>
-            <p><span>Surname:</span>  {{ forms.surname }} </p>
-            <p><span>Email:</span>  {{ forms.email}} </p>
-            <p><span>Country:</span> {{forms.country}}</p>
-            <p><span>Password:</span> {{forms.password}}</p>
-        </div>
+        <Form class="form" v-for="forms in allForms" :key="forms.id">
+            <h3>Form ID: # {{forms.id}}</h3>
+            <Text><bold-decorator>Name:</bold-decorator> {{forms.name}}</Text>
+            <Text><bold-decorator>Surname:</bold-decorator>   {{ forms.surname }}</Text>
+            <Text><bold-decorator>Email:</bold-decorator>   {{ forms.email}} </Text>
+            <Text><bold-decorator>Country:</bold-decorator>  {{forms.country}} </Text>
+            <Text><bold-decorator>Password:</bold-decorator>  {{forms.password}}</Text>
+        </Form>
     </div>
 </template>
 
 
 <script>
 import {mapGetters, mapActions} from 'vuex'
+import {FormCount, Form, Text, BoldDecorator} from './style'
 export default {
 
   name: 'Forms',
   computed: mapGetters(['formsCount', 'allForms']), 
   methods: mapActions(['fetchCountries']),
+  components: {
+    FormCount,
+    Form,
+    Text,
+    BoldDecorator
+  },
 
   async mounted() {
     this.fetchCountries()
@@ -28,29 +35,3 @@ export default {
 }
 </script>
 
-
-<style scoped>
-
-  span {
-    font-weight: 700;
-    color: white
-  }
-
-  p {
-    text-align: left;
-    margin-left: 45px;
-  }
-  .form {
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 1rem; 
-    margin-top: 1rem;
-    background-color: #141e30; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
-
-  h2 {
-    text-align: left;
-  }
-
-</style>

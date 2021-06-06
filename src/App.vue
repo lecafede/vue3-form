@@ -1,62 +1,29 @@
 <template>
-  <div id="app">
-    <div class="wrapper">
-      <div class="left__inner">
-        <ProfileForm/>
-      </div>
+  <App id="app">
+    <Wrapper>
+      <left-inner>
+         <ProfileForm/>
+      </left-inner>
       <hr> 
-      <div class="right__inner">
+      <right-inner>
         <Forms/>
-      </div>
-     </div>
-  </div>
+      </right-inner>
+    </Wrapper>
+  </App>
 </template>
 
 <script>
 
 import ProfileForm from './components/ProfileForm/ProfileForm'
 import Forms from './components/Forms/Forms'
-
+import {App, Wrapper, LeftInner, RightInner} from './style'
 
 export default {
-  name: 'App',
-  components: {ProfileForm, Forms},
+  components: {ProfileForm, Forms, App, Wrapper, LeftInner, RightInner},
 }
 </script>
 
 <style>
-
-  body {
-    background-color: #10121b;
-  
-  }
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #ccc;
-    margin-top: 60px;
-
-  }
-
-  .wrapper {
-    display: flex;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .left__inner {
-    width: 500px;
-  }
-
-  .right__inner {
-    width: 500px;
-  }
-
-  hr {
-    background: white;
-  }
-
+  body {background-color: #10121b;}
+  hr { background: white; }
 </style>
